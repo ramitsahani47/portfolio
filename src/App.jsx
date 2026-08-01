@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, lazy } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { SplashScreen } from './components/SplashScreen';
 import { BackgroundGlow } from './components/BackgroundGlow';
 import { Navbar } from './components/Navbar';
@@ -94,6 +95,9 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh', position: 'relative', background: 'var(--bg-dark)' }}>
+      {/* Vercel Web Analytics Component */}
+      <Analytics />
+
       {/* Animated Developer Terminal Splash Screen */}
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
 
