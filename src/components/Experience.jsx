@@ -240,7 +240,7 @@ export const Experience = memo(() => {
                         <IconSparkles size={15} />
                         <span>Key Achievements</span>
                       </div>
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '8px' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '8px' }}>
                         {exp.achievements.map((ach, aIdx) => (
                           <div key={aIdx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'var(--text-primary)', background: 'rgba(56, 189, 248, 0.06)', padding: '6px 12px', borderRadius: '8px', border: '1px solid rgba(56, 189, 248, 0.15)' }}>
                             <IconCheckCircle2 size={15} style={{ color: 'var(--emerald-accent)', flexShrink: 0 }} />
@@ -275,7 +275,7 @@ export const Experience = memo(() => {
                     </div>
 
                     {isExpanded && (
-                      <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '10px', listStyle: 'none', padding: 0 }} className="responsibility-grid">
+                      <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '10px', listStyle: 'none', padding: 0 }} className="responsibility-grid">
                         {exp.responsibilities.map((resp, rIdx) => (
                           <li key={rIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                             <span style={{ color: 'var(--sky-accent)', flexShrink: 0, marginTop: '2px' }}>

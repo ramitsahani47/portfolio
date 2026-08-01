@@ -282,15 +282,15 @@ export const Skills = memo(() => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-              gap: '24px',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 270px), 1fr))',
+              gap: '20px',
             }}
           >
             {productionCategories.map((cat, idx) => (
               <div
                 key={idx}
                 className="glass-panel glass-panel-glow"
-                style={{ padding: '28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+                style={{ padding: 'clamp(18px, 3.5vw, 28px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
@@ -353,28 +353,28 @@ export const Skills = memo(() => {
 
       {/* Group 2: Firebase Production Expertise */}
       {activeGroup === 'firebase' && (
-        <div className="glass-panel" style={{ padding: '40px', background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.8))', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <div style={{ width: '54px', height: '54px', borderRadius: '14px', background: 'rgba(245, 158, 11, 0.2)', border: '1px solid rgba(245, 158, 11, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#f59e0b' }}>
+        <div className="glass-panel" style={{ padding: 'clamp(18px, 4vw, 36px)', background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.8))', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', flexWrap: 'wrap' }}>
+            <div style={{ width: '54px', height: '54px', borderRadius: '14px', background: 'rgba(245, 158, 11, 0.2)', border: '1px solid rgba(245, 158, 11, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#f59e0b', flexShrink: 0 }}>
               <IconFlame size={30} />
             </div>
             <div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+              <h3 style={{ fontSize: 'clamp(1.25rem, 3vw, 1.6rem)', fontWeight: 800, color: 'var(--text-primary)' }}>
                 {firebaseCategory.title}
               </h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
                 {firebaseCategory.description}
               </p>
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', marginTop: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '16px', marginTop: '24px' }}>
             {firebaseCategory.services.map((srv, idx) => (
               <div
                 key={idx}
                 style={{
                   background: 'rgba(7, 9, 14, 0.6)',
-                  padding: '24px',
+                  padding: '20px',
                   borderRadius: '12px',
                   border: '1px solid rgba(245, 158, 11, 0.25)',
                   display: 'flex',
@@ -383,16 +383,16 @@ export const Skills = memo(() => {
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <IconCheck size={16} style={{ color: '#f59e0b' }} />
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' }}>
+                    <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <IconCheck size={16} style={{ color: '#f59e0b', flexShrink: 0 }} />
                       <span>{srv.name}</span>
                     </h4>
                     <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: '#f59e0b', background: 'rgba(245, 158, 11, 0.15)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
                       Production Experience
                     </span>
                   </div>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6 }}>
                     {srv.detail}
                   </p>
                 </div>
@@ -404,28 +404,28 @@ export const Skills = memo(() => {
 
       {/* Group 3: Backend Learning Journey */}
       {activeGroup === 'learning' && (
-        <div className="glass-panel" style={{ padding: '40px', background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(15, 23, 42, 0.8))', border: '1px solid rgba(139, 92, 246, 0.3)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <div style={{ width: '54px', height: '54px', borderRadius: '14px', background: 'rgba(139, 92, 246, 0.2)', border: '1px solid rgba(139, 92, 246, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--violet-accent)' }}>
+        <div className="glass-panel" style={{ padding: 'clamp(18px, 4vw, 36px)', background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(15, 23, 42, 0.8))', border: '1px solid rgba(139, 92, 246, 0.3)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', flexWrap: 'wrap' }}>
+            <div style={{ width: '54px', height: '54px', borderRadius: '14px', background: 'rgba(139, 92, 246, 0.2)', border: '1px solid rgba(139, 92, 246, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--violet-accent)', flexShrink: 0 }}>
               <IconRocket size={30} />
             </div>
             <div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+              <h3 style={{ fontSize: 'clamp(1.25rem, 3vw, 1.6rem)', fontWeight: 800, color: 'var(--text-primary)' }}>
                 {learningCategory.title}
               </h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
                 {learningCategory.description}
               </p>
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '16px', marginTop: '24px' }}>
             {learningCategory.techs.map((item, idx) => (
               <div
                 key={idx}
                 style={{
                   background: 'rgba(7, 9, 14, 0.6)',
-                  padding: '24px',
+                  padding: '20px',
                   borderRadius: '12px',
                   border: '1px solid rgba(139, 92, 246, 0.25)',
                   display: 'flex',
@@ -434,15 +434,15 @@ export const Skills = memo(() => {
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' }}>
+                    <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                       {item.name}
                     </h4>
                     <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--violet-accent)', background: 'rgba(139, 92, 246, 0.15)', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(139, 92, 246, 0.3)' }}>
                       ⚡ Recently Learned
                     </span>
                   </div>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6 }}>
                     {item.desc}
                   </p>
                 </div>

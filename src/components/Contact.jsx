@@ -134,10 +134,10 @@ export const Contact = memo(({ onNotify }) => {
         Whether you have a React Native mobile project, backend API opportunity, or tech inquiry, my inbox is open.
       </p>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px' }}>
         {/* Left Column: Direct Info Cards */}
         <div>
-          <div className="glass-panel" style={{ padding: '36px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="glass-panel" style={{ padding: 'clamp(18px, 4vw, 36px)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '24px', color: 'var(--text-primary)' }}>
                 Ramit Sahani • Contact Information
@@ -369,7 +369,7 @@ export const Contact = memo(({ onNotify }) => {
             noValidate
             className="glass-panel"
             style={{
-              padding: '36px',
+              padding: 'clamp(18px, 4vw, 36px)',
               display: 'flex',
               flexDirection: 'column',
               gap: '20px',

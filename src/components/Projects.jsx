@@ -204,8 +204,8 @@ export const Projects = memo(() => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: '32px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+          gap: '24px',
         }}
       >
         {filteredProjects.map((proj) => (
@@ -213,7 +213,7 @@ export const Projects = memo(() => {
             key={proj.id}
             className="glass-panel glass-panel-glow"
             style={{
-              padding: '32px',
+              padding: 'clamp(18px, 4vw, 32px)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',

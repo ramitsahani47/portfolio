@@ -236,7 +236,7 @@ export const About = memo(() => {
               </h4>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '10px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 130px), 1fr))', gap: '10px' }}>
               {focusAreas.map((area, idx) => (
                 <div
                   key={idx}

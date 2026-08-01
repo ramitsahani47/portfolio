@@ -79,7 +79,7 @@ export const Hero = memo(({ onNotify }) => {
   const handleRunTerminal = useCallback(() => {
     setTerminalRunning(true);
     setTerminalLogs(['$ npx react-native run-android --mode=release']);
-    
+
     setTimeout(() => {
       setTerminalLogs((prev) => [...prev, '✔ Bundling Hermes JS Engine for Ramit Sahani Apps...']);
     }, 400);
@@ -114,49 +114,51 @@ export const Hero = memo(({ onNotify }) => {
   }, []);
 
   return (
-    <section id="home" className="section-container" style={{ paddingTop: '120px', paddingBottom: '60px' }}>
+    <section id="home" className="section-container hero-section-container">
       <div className="hero-grid">
         {/* Left Column: Bio & Name & CTA */}
         <div className="hero-left-content">
-          <div className="section-tag hero-stagger-1" style={{ marginBottom: '16px' }}>
-            <IconSparkles size={16} />
+          <div className="section-tag hero-stagger-1" style={{ marginBottom: '16px', fontSize: 'clamp(0.68rem, 2.8vw, 0.85rem)' }}>
+            <IconSparkles size={16} style={{ flexShrink: 0 }} />
             <span>REACT NATIVE DEVELOPER • 3+ YEARS EXPERIENCE</span>
           </div>
 
-          <h1 className="hero-stagger-2" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '16px' }}>
+          <h1 className="hero-stagger-2" style={{ fontSize: 'clamp(1.75rem, 5.5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '16px', maxWidth: '100%', wordBreak: 'break-word' }}>
             Hi, I'm <span className="gradient-text">Ramit Sahani</span>
           </h1>
 
           <div
             className="hero-stagger-3"
             style={{
-              minHeight: '40px',
+              minHeight: '32px',
               height: 'auto',
               display: 'flex',
               alignItems: 'center',
               flexWrap: 'wrap',
-              fontSize: 'clamp(1.1rem, 2.2vw, 1.45rem)',
+              fontSize: 'clamp(0.85rem, 3.4vw, 1.4rem)',
               fontWeight: 600,
               color: 'var(--sky-accent)',
               marginBottom: '20px',
               fontFamily: 'var(--font-mono)',
               lineHeight: 1.4,
+              maxWidth: '100%',
+              wordBreak: 'break-word',
             }}
           >
             <span>&gt; {displayText}</span>
             <span style={{ animation: 'pulseGlow 1s infinite', marginLeft: '4px' }}>|</span>
           </div>
 
-          <p className="hero-stagger-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(1.05rem, 2vw, 1.2rem)', fontWeight: 600, lineHeight: 1.5, marginBottom: '16px' }}>
+          <p className="hero-stagger-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(0.925rem, 2.6vw, 1.2rem)', fontWeight: 600, lineHeight: 1.5, marginBottom: '16px', maxWidth: '100%' }}>
             Building scalable, high-performance cross-platform mobile applications using React Native.
           </p>
 
-          <p className="hero-stagger-4" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.925rem, 1.8vw, 1rem)', lineHeight: 1.7, marginBottom: '32px', wordBreak: 'break-word' }}>
+          <p className="hero-stagger-4" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.85rem, 2.2vw, 1rem)', lineHeight: 1.7, marginBottom: '28px', wordBreak: 'break-word', maxWidth: '100%' }}>
             React Native Developer with <strong>3+ Years of Professional Experience</strong> based in <strong>Hyderabad, Telangana, India</strong>. Specialized in building live mobile applications (including the <strong>Eenadu News App with 1M+ Play Store Downloads</strong>) and Node.js PostgreSQL backend REST APIs.
           </p>
 
           {/* Action CTA Buttons */}
-          <div className="hero-stagger-5" style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', marginBottom: '36px' }}>
+          <div className="hero-stagger-5 hero-cta-buttons">
             <a
               href="/assets/resume/Ramit_Sahani_Resume.pdf"
               download="Ramit_Sahani_Resume.pdf"
@@ -186,11 +188,11 @@ export const Hero = memo(({ onNotify }) => {
           </div>
 
           {/* Social Icons Bar */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="hero-social-bar">
             <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
               CONNECT:
             </span>
-            <div style={{ display: 'flex', gap: '12px' }}>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
               <a
                 href="https://github.com/ramitsahani47"
                 target="_blank"
@@ -205,6 +207,7 @@ export const Hero = memo(({ onNotify }) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--text-secondary)',
+                  flexShrink: 0,
                 }}
                 className="glass-panel-glow"
                 title="GitHub: ramitsahani47"
@@ -226,6 +229,7 @@ export const Hero = memo(({ onNotify }) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--text-secondary)',
+                  flexShrink: 0,
                 }}
                 className="glass-panel-glow"
                 title="LinkedIn: ramit-sahani"
@@ -249,6 +253,7 @@ export const Hero = memo(({ onNotify }) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--text-secondary)',
+                  flexShrink: 0,
                 }}
                 className="glass-panel-glow"
               >
@@ -305,69 +310,35 @@ export const Hero = memo(({ onNotify }) => {
               boxShadow: '0 15px 35px rgba(0, 0, 0, 0.5)',
               border: '1px solid rgba(56, 189, 248, 0.25)',
               borderRadius: '16px',
+              maxWidth: '100%',
+              boxSizing: 'border-box',
             }}
           >
             {/* Window Bar */}
-            <div
-              style={{
-                background: 'rgba(10, 15, 26, 0.9)',
-                padding: '10px 16px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div className="code-editor-header">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f56' }} />
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ffbd2e' }} />
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27c93f' }} />
               </div>
 
               {/* Tabs */}
-              <div style={{ display: 'flex', gap: '4px' }}>
+              <div className="code-editor-tabs">
                 <button
                   onClick={() => setActiveTab('mobile')}
-                  style={{
-                    background: activeTab === 'mobile' ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
-                    color: activeTab === 'mobile' ? 'var(--sky-accent)' : 'var(--text-muted)',
-                    border: 'none',
-                    padding: '3px 10px',
-                    borderRadius: '6px',
-                    fontSize: '0.78rem',
-                    fontFamily: 'var(--font-mono)',
-                    cursor: 'pointer',
-                  }}
+                  className={`code-tab ${activeTab === 'mobile' ? 'active' : ''}`}
                 >
                   developer.ts
                 </button>
                 <button
                   onClick={() => setActiveTab('backend')}
-                  style={{
-                    background: activeTab === 'backend' ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
-                    color: activeTab === 'backend' ? 'var(--sky-accent)' : 'var(--text-muted)',
-                    border: 'none',
-                    padding: '3px 10px',
-                    borderRadius: '6px',
-                    fontSize: '0.78rem',
-                    fontFamily: 'var(--font-mono)',
-                    cursor: 'pointer',
-                  }}
+                  className={`code-tab ${activeTab === 'backend' ? 'active' : ''}`}
                 >
                   api.controller.ts
                 </button>
                 <button
                   onClick={() => setActiveTab('terminal')}
-                  style={{
-                    background: activeTab === 'terminal' ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
-                    color: activeTab === 'terminal' ? 'var(--sky-accent)' : 'var(--text-muted)',
-                    border: 'none',
-                    padding: '3px 10px',
-                    borderRadius: '6px',
-                    fontSize: '0.78rem',
-                    fontFamily: 'var(--font-mono)',
-                    cursor: 'pointer',
-                  }}
+                  className={`code-tab ${activeTab === 'terminal' ? 'active' : ''}`}
                 >
                   metro
                 </button>
@@ -376,21 +347,9 @@ export const Hero = memo(({ onNotify }) => {
               <button
                 onClick={handleRunTerminal}
                 disabled={terminalRunning}
-                style={{
-                  background: 'rgba(16, 185, 129, 0.15)',
-                  border: '1px solid rgba(16, 185, 129, 0.3)',
-                  color: 'var(--emerald-accent)',
-                  padding: '3px 8px',
-                  borderRadius: '6px',
-                  fontSize: '0.72rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  fontFamily: 'var(--font-mono)',
-                }}
+                className="code-run-btn"
               >
-                <IconZap size={13} />
+                <IconZap size={12} />
                 <span>{terminalRunning ? 'Building...' : 'Run App'}</span>
               </button>
             </div>
@@ -398,13 +357,15 @@ export const Hero = memo(({ onNotify }) => {
             {/* Code Content */}
             <div
               style={{
-                padding: '16px 20px',
+                padding: 'clamp(12px, 3vw, 18px)',
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.8rem',
+                fontSize: 'clamp(0.72rem, 2.4vw, 0.8rem)',
                 lineHeight: 1.6,
-                minHeight: '200px',
+                minHeight: '180px',
                 background: 'rgba(11, 15, 25, 0.9)',
                 overflowX: 'auto',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
               }}
             >
               {activeTab === 'mobile' && (
@@ -413,26 +374,26 @@ export const Hero = memo(({ onNotify }) => {
                   <div>
                     <span style={{ color: '#f43f5e' }}>interface</span> <span style={{ color: '#38bdf8' }}>DeveloperProfile</span> &#123;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     name: <span style={{ color: '#10b981' }}>'Ramit Sahani'</span>;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     role: <span style={{ color: '#10b981' }}>'React Native Developer'</span>;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     experience: <span style={{ color: '#10b981' }}>'3+ Years Professional'</span>;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     location: <span style={{ color: '#10b981' }}>'Hyderabad, Telangana, India'</span>;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     email: <span style={{ color: '#10b981' }}>'ramitsahani47@gmail.com'</span>;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     phone: <span style={{ color: '#10b981' }}>'+91 76679 72667'</span>;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
-                    skills: [<span style={{ color: '#10b981' }}>'React Native'</span>, <span style={{ color: '#10b981' }}>'TypeScript'</span>, <span style={{ color: '#10b981' }}>'Node.js'</span>, <span style={{ color: '#10b981' }}>'PostgreSQL'</span>];
+                  <div style={{ paddingLeft: '12px' }}>
+                    skills: [<span style={{ color: '#10b981' }}>'React Native'</span>, <span style={{ color: '#10b981' }}>'TypeScript'</span>, <span style={{ color: '#10b981' }}>'Node.js'</span>];
                   </div>
                   <div>&#125;</div>
                 </div>
@@ -444,10 +405,10 @@ export const Hero = memo(({ onNotify }) => {
                   <div>
                     <span style={{ color: '#f43f5e' }}>export const</span> <span style={{ color: '#38bdf8' }}>getTransactions</span> = <span style={{ color: '#f43f5e' }}>async</span> (req, res) =&gt; &#123;
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     <span style={{ color: '#f43f5e' }}>const</span> data = <span style={{ color: '#f43f5e' }}>await</span> expenseService.findAll(req.query);
                   </div>
-                  <div style={{ paddingLeft: '14px' }}>
+                  <div style={{ paddingLeft: '12px' }}>
                     <span style={{ color: '#8b5cf6' }}>res</span>.json(&#123; success: <span style={{ color: '#8b5cf6' }}>true</span>, data &#125;);
                   </div>
                   <div>&#125;;</div>
@@ -472,37 +433,30 @@ export const Hero = memo(({ onNotify }) => {
       </div>
 
       {/* Key Stats Cards Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-          gap: '16px',
-          marginTop: '48px',
-        }}
-      >
+      <div className="hero-stats-grid">
         {[
-          { metric: '3+ Years', label: 'Professional React Native Experience', color: 'var(--sky-accent)' },
-          { metric: '1M+', label: 'Eenadu News App Downloads', color: 'var(--cyan-accent)' },
+          { metric: '3+ Years', label: 'Professional Experience', color: 'var(--sky-accent)' },
+          { metric: '1M+', label: 'Eenadu App Downloads', color: 'var(--cyan-accent)' },
           { metric: 'Hyderabad', label: 'Telangana, India Base', color: 'var(--violet-accent)' },
-          { metric: 'Full-Stack', label: 'React Native & Node.js PostgreSQL', color: 'var(--emerald-accent)' },
+          { metric: 'Full-Stack', label: 'React Native & Node.js', color: 'var(--emerald-accent)' },
         ].map((stat, idx) => (
           <div
             key={idx}
             className="glass-panel glass-panel-glow"
-            style={{ padding: '20px 16px', textAlign: 'center' }}
+            style={{ padding: '16px 12px', textAlign: 'center' }}
           >
             <div
               style={{
                 fontFamily: 'var(--font-heading)',
-                fontSize: '1.8rem',
+                fontSize: 'clamp(1.2rem, 3vw, 1.8rem)',
                 fontWeight: 800,
                 color: stat.color,
-                marginBottom: '4px',
+                marginBottom: '2px',
               }}
             >
               {stat.metric}
             </div>
-            <div style={{ fontSize: '0.825rem', color: 'var(--text-secondary)', lineHeight: 1.35 }}>
+            <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.3 }}>
               {stat.label}
             </div>
           </div>
@@ -523,11 +477,25 @@ export const Hero = memo(({ onNotify }) => {
 
       {/* Inline Styles */}
       <style>{`
+        .hero-section-container {
+          padding-top: clamp(100px, 14vh, 140px) !important;
+          padding-bottom: clamp(32px, 5vh, 60px) !important;
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+
         .hero-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 40px;
+          gap: clamp(20px, 4vw, 48px);
           align-items: center;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .hero-left-content {
+          width: 100%;
+          max-width: 100%;
         }
 
         .hero-left-content p {
@@ -535,11 +503,29 @@ export const Hero = memo(({ onNotify }) => {
           overflow-wrap: break-word;
         }
 
+        .hero-cta-buttons {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 32px;
+          width: 100%;
+        }
+
+        .hero-social-bar {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
         .hero-right-container {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 24px;
+          width: 100%;
+          max-width: 100%;
         }
 
         .hero-circle-avatar-wrapper {
@@ -551,14 +537,15 @@ export const Hero = memo(({ onNotify }) => {
 
         .circle-avatar-container {
           position: relative;
-          width: clamp(180px, 25vw, 220px);
-          height: clamp(180px, 25vw, 220px);
+          width: clamp(140px, 35vw, 210px);
+          height: clamp(140px, 35vw, 210px);
           border-radius: 50%;
           padding: 5px;
           background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #8b5cf6 100%);
           box-shadow: 0 0 35px rgba(56, 189, 248, 0.5), 0 0 15px rgba(6, 182, 212, 0.3);
           transition: transform 0.35s ease, box-shadow 0.35s ease;
           animation: floatCircle 5s ease-in-out infinite;
+          margin: 0 auto;
         }
 
         .circle-avatar-container:hover {
@@ -576,10 +563,10 @@ export const Hero = memo(({ onNotify }) => {
 
         .circle-status-dot {
           position: absolute;
-          bottom: 12px;
-          right: 12px;
-          width: 18px;
-          height: 18px;
+          bottom: 8px;
+          right: 8px;
+          width: 16px;
+          height: 16px;
           border-radius: 50%;
           background: #38bdf8;
           border: 3px solid #07090e;
@@ -587,6 +574,68 @@ export const Hero = memo(({ onNotify }) => {
         }
 
         .hero-code-editor {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .code-editor-header {
+          background: rgba(10, 15, 26, 0.9);
+          padding: 10px 14px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          flex-wrap: wrap;
+          max-width: 100%;
+        }
+
+        .code-editor-tabs {
+          display: flex;
+          gap: 4px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .code-tab {
+          background: transparent;
+          color: var(--text-muted);
+          border: none;
+          padding: 4px 8px;
+          border-radius: 6px;
+          font-size: clamp(0.68rem, 2.2vw, 0.78rem);
+          font-family: var(--font-mono);
+          cursor: pointer;
+          white-space: nowrap;
+          transition: all 0.2s ease;
+        }
+
+        .code-tab.active {
+          background: rgba(56, 189, 248, 0.15);
+          color: var(--sky-accent);
+        }
+
+        .code-run-btn {
+          background: rgba(16, 185, 129, 0.15);
+          border: 1px solid rgba(16, 185, 129, 0.3);
+          color: var(--emerald-accent);
+          padding: 4px 8px;
+          border-radius: 6px;
+          font-size: clamp(0.68rem, 2.2vw, 0.75rem);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-family: var(--font-mono);
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+
+        .hero-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+          gap: clamp(8px, 2vw, 16px);
+          margin-top: clamp(28px, 4vh, 44px);
           width: 100%;
         }
 
@@ -601,11 +650,58 @@ export const Hero = memo(({ onNotify }) => {
             grid-template-columns: 1fr;
             gap: 32px;
           }
-          .hero-right-container {
+          .hero-left-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+          }
+          .hero-left-content h1 {
+            text-align: left;
+          }
+          .hero-cta-buttons,
+          .hero-social-bar {
+            justify-content: flex-start;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-section-container {
+            padding-top: 100px !important;
+          }
+          .hero-social-bar {
+            justify-content: center;
+            align-items: center;
+          }
+          .hero-stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-cta-buttons {
+            flex-direction: column;
             width: 100%;
+          }
+          .hero-cta-buttons .btn-primary,
+          .hero-cta-buttons .btn-secondary {
+            width: 100% !important;
+            justify-content: center;
+          }
+          .code-editor-header {
+            justify-content: center;
+            padding: 8px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .hero-stats-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>
     </section>
   );
 });
+

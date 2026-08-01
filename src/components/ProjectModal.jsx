@@ -176,7 +176,7 @@ export const ProjectModal = memo(({ project, onClose }) => {
             <IconLayers size={18} />
             <span>Key Implemented Features</span>
           </h4>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '10px' }}>
             {project.features.map((feat, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                 <IconCheck size={16} style={{ color: 'var(--emerald-accent)', flexShrink: 0, marginTop: '2px' }} />
@@ -206,7 +206,7 @@ export const ProjectModal = memo(({ project, onClose }) => {
         {/* Architecture Topology */}
         <div style={{ background: 'rgba(10, 15, 26, 0.8)', padding: '16px 18px', borderRadius: '12px', border: '1px solid var(--glass-border)', fontFamily: 'var(--font-mono)', fontSize: '0.78rem', overflowX: 'auto' }}>
           <div style={{ color: 'var(--text-muted)', marginBottom: '6px' }}>// Component Architecture Flow</div>
-          <div style={{ color: '#38bdf8', whiteSpace: 'nowrap' }}>{project.topology}</div>
+          <div style={{ color: '#38bdf8', wordBreak: 'break-word' }}>{project.topology}</div>
         </div>
       </div>
 

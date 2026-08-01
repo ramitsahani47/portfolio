@@ -45,10 +45,13 @@ export const Navbar = memo(({ activeSection }) => {
         top: 0,
         left: 0,
         right: 0,
+        width: '100%',
+        maxWidth: '100vw',
         zIndex: 1000,
         transition: 'all 0.3s ease',
         padding: scrolled ? '10px 0' : '16px 0',
         animation: 'navSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both',
+        boxSizing: 'border-box',
       }}
       className={scrolled ? 'glass-nav' : ''}
     >
@@ -195,14 +198,18 @@ export const Navbar = memo(({ activeSection }) => {
             top: '100%',
             left: 0,
             right: 0,
+            width: '100%',
+            maxWidth: '100vw',
             background: 'rgba(7, 9, 14, 0.96)',
             backdropFilter: 'blur(24px)',
             borderBottom: '1px solid var(--glass-border)',
-            padding: '20px clamp(16px, 4vw, 24px)',
+            padding: '20px clamp(14px, 4vw, 24px)',
             display: 'flex',
             flexDirection: 'column',
             gap: '10px',
             boxShadow: '0 15px 30px rgba(0,0,0,0.5)',
+            boxSizing: 'border-box',
+            overflowX: 'hidden',
           }}
         >
           {navLinks.map((link) => (

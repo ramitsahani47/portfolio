@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
   overflow-wrap: break-word;
   word-break: break-word;
+  max-width: 100%;
 }
 
 /* Gradient Text Effect */
@@ -103,6 +104,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 16px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .glass-panel:hover {
@@ -262,6 +265,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
   text-decoration: none;
   touch-action: manipulation;
+  max-width: 100%;
 }
 
 .btn-primary:hover {
@@ -292,6 +296,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(8px);
   text-decoration: none;
   touch-action: manipulation;
+  max-width: 100%;
 }
 
 .btn-secondary:hover {
@@ -317,6 +322,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--emerald-accent);
   font-size: 0.825rem;
   font-weight: 500;
+  max-width: 100%;
 }
 
 .status-dot {
@@ -341,6 +347,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.95rem;
   outline: none;
   transition: all 0.25s ease;
+  max-width: 100%;
 }
 
 .form-input:focus {
@@ -357,8 +364,10 @@ h1, h2, h3, h4, h5, h6 {
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 24px;
+  padding: 100px clamp(14px, 4vw, 24px);
   width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .section-tag {
@@ -366,23 +375,27 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 2.8vw, 0.85rem);
   color: var(--sky-accent);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin-bottom: 12px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  word-break: break-word;
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.65rem, 4vw, 3rem);
   font-weight: 800;
   margin-bottom: 16px;
   line-height: 1.2;
+  max-width: 100%;
 }
 
 .section-subtitle {
   color: var(--text-secondary);
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   max-width: 650px;
   margin-bottom: 48px;
 }
@@ -409,7 +422,11 @@ img {
 /* Mobile Phones (Portrait & Landscape: 320px to 640px) */
 @media (max-width: 640px) {
   .section-container {
-    padding: 70px 16px;
+    padding: 70px 14px 40px;
+  }
+  
+  #home.section-container {
+    padding-top: 100px !important;
   }
   
   .btn-primary,

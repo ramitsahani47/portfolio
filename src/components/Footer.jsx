@@ -39,15 +39,7 @@ export const Footer = memo(() => {
         }}
       >
         {/* Top Footer Row */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '24px',
-          }}
-        >
+        <div className="footer-top-row">
           {/* Brand */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div
@@ -61,6 +53,7 @@ export const Footer = memo(() => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'var(--sky-accent)',
+                flexShrink: 0,
               }}
             >
               <IconCode size={20} />
@@ -106,19 +99,7 @@ export const Footer = memo(() => {
         </div>
 
         {/* Bottom Footer Row */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '16px',
-            paddingTop: '24px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-            fontSize: '0.85rem',
-            color: 'var(--text-muted)',
-          }}
-        >
+        <div className="footer-bottom-row">
           <div>
             © 2026 Ramit Sahani. All Rights Reserved.
           </div>
@@ -128,6 +109,29 @@ export const Footer = memo(() => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .footer-top-row, .footer-bottom-row {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+        }
+        .footer-bottom-row {
+          padding-top: 24px;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          font-size: 0.85rem;
+          color: var(--text-muted);
+        }
+        @media (max-width: 640px) {
+          .footer-top-row, .footer-bottom-row {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+        }
+      `}</style>
     </footer>
   );
 });
